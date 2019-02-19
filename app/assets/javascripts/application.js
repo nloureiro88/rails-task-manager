@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+const deleteButtons = document.querySelectorAll(".fa-trash-alt");
+deleteButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
+    alert("Are you sure that you want to delete this task?");
+  });
+});

@@ -1,0 +1,19 @@
+<ul>
+  <% @tasks.each do |task| %>
+    <% icon = task.completed == true ? "check-square" : "square" %>
+    <li class="">
+      <i class='far fa-<%="#{icon}"%>'></i>
+      <%= link_to task.title, task_path(task) %>
+      <%= link_to edit_task_path(task) do %>
+        <i class="fas fa-pen-fancy"></i>
+      <% end %>
+      <%= link_to task_path(task), method: :delete do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to new_task_path do %>
+  <i class="fas fa-plus-circle"></i> <span>Add Task</span>
+<% end %>
